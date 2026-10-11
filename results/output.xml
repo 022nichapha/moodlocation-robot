@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.13.7 on win32)" generated="2026-10-12T04:19:28.555474" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests Us02" source="C:\Users\นิชาภา\Desktop\moodlocation-robot\tests_us02.robot">
+<test id="s1-t1" name="TC_2_0_001 เลือกอารมณ์เครียดและค้นหาสถานที่" line="104">
+<kw name="Open App" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-10-12T04:19:28.776201" level="INFO">Opening browser 'Chrome' to base url 'https://moodlocation.vercel.app/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-10-12T04:19:28.775974" elapsed="1.684031"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-10-12T04:19:30.461651" elapsed="0.066418"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>1 second</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-10-12T04:19:30.528425" elapsed="0.001557"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>15 seconds</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-10-12T04:19:30.530390" elapsed="0.022227"/>
+</kw>
+<status status="PASS" start="2026-10-12T04:19:28.775290" elapsed="1.777543"/>
+</kw>
+<kw name="Login To App">
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2026-10-12T04:19:30.554274" level="INFO">${email} = nichaphabeam2548@gmail.com</msg>
+<var>${email}</var>
+<arg>MOOD_EMAIL</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2026-10-12T04:19:30.553824" elapsed="0.000526"/>
+</kw>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2026-10-12T04:19:30.554966" level="INFO">${password} = Beam160448.</msg>
+<var>${password}</var>
+<arg>MOOD_PASSWORD</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2026-10-12T04:19:30.554584" elapsed="0.000433"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-10-12T04:19:30.555627" level="INFO">Length is 26.</msg>
+<arg>${email}</arg>
+<arg>กรุณากำหนด MOOD_EMAIL ใน Terminal</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-10-12T04:19:30.555201" elapsed="0.000466"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-10-12T04:19:30.555967" level="INFO">Length is 11.</msg>
+<arg>${password}</arg>
+<arg>กรุณากำหนด MOOD_PASSWORD ใน Terminal</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-10-12T04:19:30.555756" elapsed="0.000246"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_LINK}</arg>
+<arg>15 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-10-12T04:19:30.556099" elapsed="0.087900"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-10-12T04:19:30.644534" level="INFO">Clicking element 'xpath=//a[normalize-space(.)='เข้าสู่ระบบ']'.</msg>
+<arg>${LOGIN_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T04:19:30.644225" elapsed="0.123441"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_INPUT}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-10-12T04:19:30.768011" elapsed="0.095730"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-10-12T04:19:30.864245" level="INFO">Typing text 'nichaphabeam2548@gmail.com' into text field 'xpath=//input[@placeholder='example@mail.com']'.</msg>
+<arg>${EMAIL_INPUT}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T04:19:30.863928" elapsed="0.260294"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-10-12T04:19:31.126495" level="INFO">Typing text 'Beam160448.' into text field 'xpath=//input[@placeholder='••••••••']'.</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T04:19:31.124723" elapsed="0.228663"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-10-12T04:19:31.354079" level="INFO">Clicking element 'xpath=//form//button[normalize-space(.)='เข้าสู่ระบบ']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-10-12T04:19:31.353700" elapsed="0.176003"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-10-12T04:19:51.873838" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-36.png"&gt;&lt;img src="selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-10-12T04:19:51.875257" level="FAIL">Element 'xpath=//button[contains(normalize-space(.),'เครียด')]' not visible after 20 seconds.</msg>
+<arg>${MOOD_STRESSED}</arg>
+<arg>20 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-10-12T04:19:31.529966" elapsed="20.365750">Element 'xpath=//button[contains(normalize-space(.),'เครียด')]' not visible after 20 seconds.</status>
+</kw>
+<status status="FAIL" start="2026-10-12T04:19:30.553291" elapsed="21.343575">Element 'xpath=//button[contains(normalize-space(.),'เครียด')]' not visible after 20 seconds.</status>
+</kw>
+<kw name="Select Mood And Search">
+<arg>${MOOD_STRESSED}</arg>
+<status status="NOT RUN" start="2026-10-12T04:19:51.901447" elapsed="0.000159"/>
+</kw>
+<kw name="Open Place Details">
+<status status="NOT RUN" start="2026-10-12T04:19:51.903204" elapsed="0.000119"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-10-12T04:19:51.905896" elapsed="2.752510"/>
+</kw>
+<doc>เข้าสู่ระบบ เลือกอารมณ์เครียด ค้นหา และเปิดรายละเอียด</doc>
+<status status="FAIL" start="2026-10-12T04:19:28.773490" elapsed="25.885603">Element 'xpath=//button[contains(normalize-space(.),'เครียด')]' not visible after 20 seconds.</status>
+</test>
+<status status="FAIL" start="2026-10-12T04:19:28.557052" elapsed="26.105945"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests Us02" id="s1" pass="0" fail="1" skip="0">Tests Us02</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
